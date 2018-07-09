@@ -537,7 +537,7 @@
  */
 //#define DEFAULT_AXIS_STEPS_PER_UNIT   { 160, 160, 800, 410.23 }
 //#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80.32, 80.32, 400, 96.43 }
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 608,616 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 608.616 }
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -574,8 +574,8 @@
  * When changing speed and direction, if the difference is less than the
  * value set here, it may happen instantaneously.
  */
-#define DEFAULT_XJERK                 10.0
-#define DEFAULT_YJERK                 10.0
+#define DEFAULT_XJERK                 15.0
+#define DEFAULT_YJERK                 15.0
 #define DEFAULT_ZJERK                  0.3
 #define DEFAULT_EJERK                  5.0
 
