@@ -1,5 +1,5 @@
 /*/
-Hypercube/Ar ZZ 1.1.9 Pitan BFPT toqueteado por DC
+Hypercube/Ar  1.1.9 05/08/19 BFPT toqueteado por DC
  * Marlin 3D Printer Firmware
  * Copyright (C) 2016 MarlinFirmware [https://github.com/MarlinFirmware/Marlin]
  *
@@ -599,7 +599,7 @@ Hypercube/Ar ZZ 1.1.9 Pitan BFPT toqueteado por DC
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 418.5, 120 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 415, 120 }
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -767,8 +767,8 @@ Hypercube/Ar ZZ 1.1.9 Pitan BFPT toqueteado por DC
  *      O-- FRONT --+
  *    (0,0)
  */
-#define X_PROBE_OFFSET_FROM_EXTRUDER -1  // X offset: -left  +right  [of the nozzle]
-#define Y_PROBE_OFFSET_FROM_EXTRUDER -39  // Y offset: -front +behind [the nozzle]
+#define X_PROBE_OFFSET_FROM_EXTRUDER 34  // X offset: -left  +right  [of the nozzle]
+#define Y_PROBE_OFFSET_FROM_EXTRUDER 0  // Y offset: -front +behind [the nozzle]
 #define Z_PROBE_OFFSET_FROM_EXTRUDER -2   // Z offset: -below +above  [the nozzle]
 
 // Certain types of probes need to stay away from edges
@@ -871,16 +871,16 @@ Hypercube/Ar ZZ 1.1.9 Pitan BFPT toqueteado por DC
 // @section machine
 
 // The size of the print bed
-#define X_BED_SIZE 205
-#define Y_BED_SIZE 210
+#define X_BED_SIZE 197
+#define Y_BED_SIZE 184
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
-#define Y_MIN_POS -35
+#define Y_MIN_POS 0
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
-#define Z_MAX_POS 240
+#define Z_MAX_POS 200
 
 /**
  * Software Endstops
@@ -919,7 +919,7 @@ Hypercube/Ar ZZ 1.1.9 Pitan BFPT toqueteado por DC
  * For other boards you may need to define FIL_RUNOUT_PIN, FIL_RUNOUT2_PIN, etc.
  * By default the firmware assumes HIGH=FILAMENT PRESENT.
  */
-#define FILAMENT_RUNOUT_SENSOR
+//#define FILAMENT_RUNOUT_SENSOR
 #if ENABLED(FILAMENT_RUNOUT_SENSOR)
   #define NUM_RUNOUT_SENSORS   1     // Number of sensors, up to one per extruder. Define a FIL_RUNOUT#_PIN for each.
   #define FIL_RUNOUT_INVERTING true // set to true to invert the logic of the sensor.
@@ -1270,7 +1270,7 @@ Hypercube/Ar ZZ 1.1.9 Pitan BFPT toqueteado por DC
 
 #if ENABLED(NOZZLE_PARK_FEATURE)
   // Specify a park position as { X, Y, Z }
-  #define NOZZLE_PARK_POINT { (X_MIN_POS + 10), (Y_MAX_POS - 10), 20 }
+  #define NOZZLE_PARK_POINT { (X_MIN_POS), (Y_MAX_POS), 20 }
   #define NOZZLE_PARK_XY_FEEDRATE 100   // X and Y axes feedrate in mm/s (also used for delta printers Z axis)
   #define NOZZLE_PARK_Z_FEEDRATE 100      // Z axis feedrate in mm/s (not used for delta printers)
 #endif
